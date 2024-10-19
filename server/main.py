@@ -29,9 +29,9 @@ def start():
     uvicorn.run(
         "main:server",
         host="127.0.0.2",
-        port=80,
-        # ssl_certfile=rel_path(__file__, "../certs/fullchain.pem"),
-        # ssl_keyfile=rel_path(__file__, "../certs/private_key.pem"),
+        port=443,
+        ssl_certfile=rel_path(__file__, "../certs/fullchain.pem"),
+        ssl_keyfile=rel_path(__file__, "../certs/private_key.pem"),
     )
 
 

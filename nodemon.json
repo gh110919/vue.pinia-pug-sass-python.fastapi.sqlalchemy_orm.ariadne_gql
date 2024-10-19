@@ -1,7 +1,7 @@
 {
-  "exec": "python server/main.py",
-  "ext": "py",
-  "watch": [
-    "."
-  ]
+    "exec": "python server/main.py",
+    "ext": "py",
+    "watch": [
+        "."
+    ]
 }

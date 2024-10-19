@@ -46,45 +46,36 @@ const handleClick = (id: string) => {
 </script>
 
 <template lang="pug">
-    section.container
-        ul.list
-            li.item(v-for="(e, i) in storeData.ids" :key="i")
-                button.btn(@click="handleClick(e.id)") {{ e.id }}
-        div.data
-            p {{ storeData.item?.id }}
-            p {{ storeData.item?.name }}
-            p {{ storeData.item?.value }}
+section.container
+    ul.list
+        li.item(v-for="(e, i) in storeData.ids" :key="i")
+            button.btn(@click="handleClick(e.id)") {{ e.id }}
+    div.data
+        p {{ storeData.item?.id }}
+        p {{ storeData.item?.name }}
+        p {{ storeData.item?.value }}
 </template>
 
-<style scoped lang="scss">
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-}
-
-.list {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-}
-
-.item {
-    outline: 1px solid blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.btn {
-    padding: 4px;
-    background: transparent;
-}
-
-.data {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
+<style scoped lang="sass">
+.container
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 16px
+.list
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    gap: 8px
+.item
+    outline: 1px solid blue
+    display: flex
+    justify-content: center
+    align-items: center
+.btn
+    padding: 4px
+    background: transparent
+.data
+    display: flex
+    flex-direction: column
+    gap: 4px
 </style>

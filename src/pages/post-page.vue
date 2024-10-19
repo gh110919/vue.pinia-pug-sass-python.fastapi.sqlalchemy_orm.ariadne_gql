@@ -55,18 +55,14 @@ const handleClick = () => {
 };
 </script>
 
-<template lang="html">
-    <section class="container">
-        <TableMap label="Форма" :array="inputs"></TableMap>
-        <button @click="handleClick" :disabled="!storeForm.valid">
-            Отправить
-        </button>
-        <div>
-            <p>{{ postRef?.id }}</p>
-            <p>{{ postRef?.name }}</p>
-            <p>{{ postRef?.value }}</p>
-        </div>
-    </section>
+<template lang="pug">
+section.container 
+    TableMap(label="Форма", :array="inputs")
+    button(@click="handleClick", :disabled="!storeForm.valid") Отправить 
+    div 
+        p {{ postRef?.id }} 
+        p {{ postRef?.name }} 
+        p {{ postRef?.value }}
 </template>
 
 <style scoped lang="sass">
