@@ -1,0 +1,22 @@
+input DataInput {
+  id: ID
+  name: String
+  value: String
+}
+
+type Data {
+  id: ID
+  name: String
+  value: String
+}
+
+type Mutation {
+  createData(data: DataInput): Data
+  updateData(data: DataInput): Int
+  deleteData(data: DataInput): Int
+}
+
+type Query {
+  getAllData: [Data]
+  getData(data: DataInput): Data
+}

@@ -1,0 +1,31 @@
+{
+  "name": "vite-vue.pinia-ts-pug-sass-python.fastapi_backend.sqlalchemy_orm.ariadne_gql",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "serve": "npx nodemon",
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.11.8",
+    "graphql": "^16.9.0",
+    "graphql-tag": "^2.12.6",
+    "nodemon": "^3.1.7",
+    "pinia": "^2.2.4",
+    "pug": "^3.0.3",
+    "sass": "^1.80.2",
+    "vue": "^3.4.37",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.6",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "@vue/language-plugin-pug": "^2.1.6",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1",
+    "vue-tsc": "^2.0.29"
+  }
+}
