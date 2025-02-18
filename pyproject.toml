@@ -1,0 +1,22 @@
+[project]
+name = "vue-pinia-pug-sass-python-fastapi-sqlalchemy-orm-ariadne-gql"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "gh110919",email = "e0e6labw63za@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "uvicorn (>=0.34.0,<0.35.0)",
+    "fastapi (>=0.115.8,<0.116.0)",
+    "sqlalchemy (>=2.0.38,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "src/backend"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

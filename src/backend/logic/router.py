@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from src.controller import (
+from logic.controller import (
     controller_create,
     controller_read_all,
     controller_read,

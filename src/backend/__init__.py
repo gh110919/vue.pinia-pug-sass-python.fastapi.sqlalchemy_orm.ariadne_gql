@@ -1,20 +1,20 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from src.router import router
-from utils.rel_path import rel_path
 import uvicorn
 from ariadne import load_schema_from_path, make_executable_schema
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI
 from ariadne.asgi import GraphQL
-from src.resolver import resolvers
-
+from logic.router import router
+from logic.resolver import resolvers
+from utils.rel_path import rel_path
 
 server = FastAPI()
 server.openapi_url = "/openapi.json"
 server.include_router(router, prefix="/api")
-server.add_route(
-    "/gql",
-    GraphQL(make_executable_schema(load_schema_from_path("schema.gql"), resolvers)),
-)
+
+load = load_schema_from_path("schema.gql")
+make = make_executable_schema(load, resolvers)
+
+server.add_route("/gql", GraphQL(make))
 
 server.add_middleware(
     CORSMiddleware,
@@ -24,14 +24,13 @@ server.add_middleware(
     allow_headers=["*"],
 )
 
-
 def start():
     uvicorn.run(
-        "main:server",
+        "__init__:server",
         host="127.0.0.2",
         port=443,
-        ssl_certfile=rel_path(__file__, "../certs/fullchain.pem"),
-        ssl_keyfile=rel_path(__file__, "../certs/private_key.pem"),
+        ssl_certfile=rel_path(__file__, "../../certs/fullchain.pem"),
+        ssl_keyfile=rel_path(__file__, "../../certs/private_key.pem"),
     )
 
 

@@ -1,6 +1,6 @@
 from fastapi import Request
 from fastapi.responses import JSONResponse
-from src.service import (
+from logic.service import (
     service_create,
     service_delete,
     service_read,

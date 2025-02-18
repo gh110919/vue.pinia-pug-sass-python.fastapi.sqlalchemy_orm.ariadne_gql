@@ -1,7 +1,7 @@
 import { createPinia } from "pinia";
 import { createApp } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
-import entryPoint from "./app/entry-point.vue";
+import entryPoint from "../frontend/app/entry-point.vue";
 import { routes } from "./app/routes";
 
 const state = createPinia();

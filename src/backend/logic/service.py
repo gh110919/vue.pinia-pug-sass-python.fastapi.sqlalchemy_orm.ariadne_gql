@@ -1,6 +1,6 @@
 from uuid import uuid4
 from sqlalchemy.orm import sessionmaker
-from src.model import engine, data_model
+from logic.model import engine, data_model
 
 session = sessionmaker(bind=engine)()
 

@@ -1,7 +1,5 @@
 {
-    "exec": "python server/main.py",
+    "exec": "env/Scripts/python src/backend/__init__.py",
     "ext": "py",
-    "watch": [
-        "."
-    ]
+    "watch": ["."]
 }
