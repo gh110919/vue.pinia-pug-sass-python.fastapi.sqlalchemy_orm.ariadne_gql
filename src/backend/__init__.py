@@ -24,13 +24,19 @@ server.add_middleware(
     allow_headers=["*"],
 )
 
+ssl = {
+    "cert": rel_path(__file__, "../../certs/fullchain.pem"),
+    "key": rel_path(__file__, "../../certs/private_key.pem")
+}
+
+
 def start():
     uvicorn.run(
         "__init__:server",
         host="127.0.0.2",
         port=443,
-        ssl_certfile=rel_path(__file__, "../../certs/fullchain.pem"),
-        ssl_keyfile=rel_path(__file__, "../../certs/private_key.pem"),
+        ssl_certfile=ssl["cert"],
+        ssl_keyfile=ssl["key"],
     )
 
 
